@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boxboat-deployment
+  labels:
+    app: boxboat
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: boxboat
+  template:
+    metadata:
+      labels:
+        app: boxboat
+    spec:
+      containers:
+      - name: boxboat
+        image: boxboat/hello-world-webapp
+        ports:
+        - containerPort: 8080
