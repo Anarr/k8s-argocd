@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: boxboat-deployment
   labels:
-    app: boxboat
+    app: myapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: boxboat
+      app: myapp
   template:
     metadata:
       labels:
-        app: boxboat
+        app: myapp
     spec:
       containers:
-      - name: boxboat
+      - name: myapp
         image: boxboat/hello-world-webapp
         ports:
         - containerPort: 8080
